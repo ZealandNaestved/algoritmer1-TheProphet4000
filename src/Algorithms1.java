@@ -27,13 +27,18 @@ public class Algorithms1 {
 
     public static void main(String[] args) {
         exampleOfPredictableRandomNumber();
+        randomBoyName();
+    }
+
+    private static void randomBoyName() {
+        System.out.println(" ");
     }
 
     private static void exampleOfPredictableRandomNumber() {
-        Random random = new Random();
+        Random random = new Random(); //Giver mulighed for at lave et random tal.... laver en genvej kaldt random
         random.setSeed(15L); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
-        System.out.print("Hvis vi bruger seed, vil random altid returnere de samme værdier, f.eks. giver denne 21 --> ");
-        System.out.println(random.nextInt(45));
+        System.out.print("Hvis vi bruger seed, vil random altid returnere de samme værdier, f.eks. giver denne 21 --> "); //udskriver instrukter
+        System.out.println(random.nextInt(45)); //udskriver resultat
     }
 
 }
