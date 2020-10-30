@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -9,7 +11,6 @@ import java.util.Random;
 
 public class Algorithms1 {
 
-    // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
 
     // TODO 2 - Skriv en randomBoyName() metode i Algorithms1, som returnerer et tilfældigt drengenavn fra Data klassens randomPigeNavne property OBS: randomPigeNavne skal forblive private!
 
@@ -26,30 +27,18 @@ public class Algorithms1 {
     // TODO 8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
 
     public static void main(String[] args) {
-        exampleOfPredictableRandomNumber();
-        randomBoyName();
+        randomBoyAndGirlNames();
     }
 
-    public static String randomBoyName() {
-            Random rand = new Random();
+    private static void randomBoyAndGirlNames() { //fik adgang til navne, og mangler nu at lave en array
 
-            String[] names;
-            Data dat = new Data();
-            names = dat.randomDrengeNavne;
-            // LASSE names = new Data().getRandomDrengeNavne();
-            int arrayLength = names.length;
-            int randomInt = rand.nextInt(arrayLength);
-            String randomName = names[randomInt];
-            System.out.println(randomName);
-            return randomName;
-            // LASSE return names[rand.nextInt(names.length)];
-    }
+        int antalNavne = 3; //får altid *2, der man både har drenge og pige navne
+        //String pigeOgDrengeNavne[]; Vil gerne have smidt alle navne ind i en array, så der kommer et tilfældigt navn ved hvert array.
 
-    private static void exampleOfPredictableRandomNumber() {
-        Random random = new Random(); //Giver mulighed for at lave et random tal.... laver en genvej kaldt random
-        random.setSeed(15L); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
-        System.out.print("Hvis vi bruger seed, vil random altid returnere de samme værdier, f.eks. giver denne 21 --> "); //udskriver instrukter
-        System.out.println(random.nextInt(45)); //udskriver resultat
+        for (int i = 0; i != antalNavne; i++) {
+            System.out.println(Data.randomBoyName());
+            System.out.println(Data.randomGirlName());
+        }
     }
 
 }
