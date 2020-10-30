@@ -30,8 +30,19 @@ public class Algorithms1 {
         randomBoyName();
     }
 
-    private static void randomBoyName() {
-        System.out.println(" ");
+    public static String randomBoyName() {
+            Random rand = new Random();
+
+            String[] names;
+            Data dat = new Data();
+            names = dat.randomDrengeNavne;
+            // LASSE names = new Data().getRandomDrengeNavne();
+            int arrayLength = names.length;
+            int randomInt = rand.nextInt(arrayLength);
+            String randomName = names[randomInt];
+            System.out.println(randomName);
+            return randomName;
+            // LASSE return names[rand.nextInt(names.length)];
     }
 
     private static void exampleOfPredictableRandomNumber() {
